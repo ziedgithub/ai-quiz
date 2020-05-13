@@ -1,0 +1,14 @@
+@media (min-width: 900px) {
+  .App {
+    width: 70%;
+    margin: auto;
+  }
+
+}
+
+.App {
+  padding: 2vh 3vw;
+  & h2 {
+    text-align: center;
+  }
+}
