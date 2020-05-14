@@ -2,7 +2,7 @@
   "name": "ai-quiz",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ziedgithub.github.io/ai-quiz.git",
+  "homepage": "https://github.com/ziedgithub/ai-quiz/",
   "dependencies": {
     "@material-ui/core": "^4.9.13",
     "@material-ui/icons": "^4.9.1",
