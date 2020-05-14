@@ -30,7 +30,7 @@ const Quiz = ({quizes, submitted, setSubmitted}) => {
       }, true) ? 1 : 0;
       return score + rightQuiz;
     }, 0);
-    setScore(scoreFinal/quizes.length);
+    setScore(scoreFinal/quizes.length*100);
   }
 
   return (

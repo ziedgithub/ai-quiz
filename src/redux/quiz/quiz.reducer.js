@@ -194,22 +194,27 @@ const INITIAL_STATE = {
       responses: [
         {
           label: "Less data",
-          valid: false
+          valid: false,
+          checked: false
         },
         {
           label: "The training data contains information about the target which will not be available when predicting.",
-          valid: true
+          valid: true,
+          checked: false
         },
         {	label: " It leads to poor performances in on the training set, but high prediction performances",
           valid: false,
-          explication: "In contrary"
+          explication: "In contrary",
+          checked: false
         },
         {	label: "Not carefully distinguish training data from validation data",
-          valid: true
+          valid: true,
+          checked: false
         },
         {	label:"Variables updated (or created) after the target value is realized is included",
           valid: false,
-          explication: "To prevent this type of data leakage, any variable updated (or created) after the target value is realized should be excluded."
+          explication: "To prevent this type of data leakage, any variable updated (or created) after the target value is realized should be excluded.",
+          checked: false
         }
       ]
     },
@@ -219,16 +224,19 @@ const INITIAL_STATE = {
         {
           label:" If the data is skewed then, missing values can be imputed or replaced by mean of the all observations of the dataset",
           valid: false,
-          explication:"This is the case for normally distributed data."
+          explication:"This is the case for normally distributed data.",
+          checked: false
         },
         {
           label:"If the data is skewed then, it is better to impute or replace the missing values by Median of all observations of the dataset.",
-          valid: true
+          valid: true,
+          checked: false
         },
         {
           label: "Median is the middle value in a dataset",
           valid: true,
-          explication: "Alright. Mean is the average of a dataset, and mode is the most frequently observation in a dataset"
+          explication: "Alright. Mean is the average of a dataset, and mode is the most frequently observation in a dataset",
+          checked: false
         }
       ]
     },
@@ -237,20 +245,24 @@ const INITIAL_STATE = {
       responses:[
         {
           label: "New variables created from categories presented in categorical variable",
-          valid: true
+          valid: true,
+          checked: false
         },
         {
           label: "Variables created to transform categorical data to numbers",
-          valid: true
+          valid: true,
+          checked: false
         },
         {
           label: "Independent variables",
           valid: false,
-          explication:" They could be applied to both dependent and indepedent variables"
+          explication:" They could be applied to both dependent and indepedent variables",
+          checked: false
         },
         {
           label: "Created using one hot encoding",
-          valid: true
+          valid: true,
+          checked: false
         }
       ]
     },
@@ -260,25 +272,30 @@ const INITIAL_STATE = {
         {
           label:" Transform categorical variables into numerical",
           valid:false,
-          explication:"In  contrary"
+          explication:"In  contrary",
+          checked: false
         },
         {
           label:"Data processing method",
           valid:false,
-          explication:" It is data preprocessing"
+          explication:" It is data preprocessing",
+          checked: false
         },
         {
           label:"Quantization technique to handle continuous variables",
-          valid:true
+          valid:true,
+          checked: false
         },
         {
           label:"Fixed-width binning is based on domain knowledge to create fix width bins",
-          valid:true
+          valid:true,
+          checked: false
         },
         {
           label:"In fixed-width binning, data distribution decides bin ranges for itself",
           valid:false,
-          explication:"Wrong. This is called adaptive binning"
+          explication:"Wrong. This is called adaptive binning",
+          checked: false
         }
       ]
     },
@@ -288,11 +305,13 @@ const INITIAL_STATE = {
         {
           label:"Normalization is the process of rescaling feature so that they will follow normal distribution",
           valid: false,
-          explication:" Of course not. This is called standardization"
+          explication:" Of course not. This is called standardization",
+          checked: false
         },
         {
           label:"Normalization shrinks the range of  data so that the range is fixed between 0 and 1.",
-          valid:true
+          valid:true,
+          checked: false
         }
       ]
     },
@@ -302,20 +321,24 @@ const INITIAL_STATE = {
         {
           label:"Accuracy is the best metric to use",
           valid: false,
-          explication:" It can be very misleading. Althought, we can use confusion matrix, precision, recall, F1:score"
+          explication:" It can be very misleading. Althought, we can use confusion matrix, precision, recall, F1:score",
+          checked: false
         },
         {
           label:"Decision trees frequently perform well on imbalanced data",
-          valid:true
+          valid:true,
+          checked: false
         },
         {
           label:"Resampling techniques like oversample minority class or under sample majority class are beneficial in case of imbalanced data",
           valid:true,
-          explication:"Warning!! oversampling should be done after data splitting into test and train"
+          explication:"Warning!! oversampling should be done after data splitting into test and train",
+          checked: false
         },
         {
           label:"SMOTE uses KNN to generate synthetic training data",
-          valid: true
+          valid: true,
+          checked: false
         }
       ]
     },
@@ -324,15 +347,18 @@ const INITIAL_STATE = {
       responses:[
         {
           label:"Feature selection is choosing some feature based on domain knowledge",
-          valid:true
+          valid:true,
+          checked: false
         },
         {
           label:"Feature extraction is creating new data from original one",
-          valid:true
+          valid:true,
+          checked: false
         },
         {
           label:"Feature selection create new subset of new data while feature extraction extract some variables from dataset",
-          valid: false
+          valid: false,
+          checked: false
         }
       ]
     },
@@ -342,20 +368,24 @@ const INITIAL_STATE = {
         {
           label:"It means that two variables are parallel and not related",
           valid: false,
-          explication:"It is totally the contrary. it means they arehighly correlated"
+          explication:"It is totally the contrary. it means they arehighly correlated",
+          checked: false
         },
         {
           label:" creating new variable from existing one could cause colinearity",
-          valid:true
+          valid:true,
+          checked: false
         },
         {
           label:"High correlation",
           valid:true,
-          explication: "We could discover correlation between two variables with a scatter plot, and strength of correlation with the correlation matrix"
+          explication: "We could discover correlation between two variables with a scatter plot, and strength of correlation with the correlation matrix",
+          checked: false
         },
         {
           label:"Reduce multicolinearity by adding more data",
-          valid:true
+          valid:true,
+          checked: false
         }
       ]
     },
@@ -365,26 +395,31 @@ const INITIAL_STATE = {
         {
           label:"is a technique of feature selection",
           valid:false,
-          explication:"This is a very common error. PCA select some variables from original dataset then create new ones"
+          explication:"This is a very common error. PCA select some variables from original dataset then create new ones",
+          checked: false
         },
         {
           label:"Searches for a linear combination of variables that best separates 2 classes",
-          valid:true
+          valid:true,
+          checked: false
         },
         {
           label:"It is a supervised algorithm that reduce dimensionality and classify data",
           valid:false,
-          explication:"PCA is usupervised and dedicated to dimensionality reduction only"
+          explication:"PCA is usupervised and dedicated to dimensionality reduction only",
+          checked: false
         },
         {
           label:"Standardization is a must before PCA",
           valid:true,
-          explication:"Scaling data is a requirement for the optimal performance of PCA"
+          explication:"Scaling data is a requirement for the optimal performance of PCA",
+          checked: false
         },
         {
           label:"The core of coponent analysis is built on the concept of eigenvectors and eigenvalues",
           valid:true,
-          explication:"The technique of Eigenvectors and Eigenvalues are used to compress the data.Eigenvectors are used to make linear transformation understandable. "
+          explication:"The technique of Eigenvectors and Eigenvalues are used to compress the data.Eigenvectors are used to make linear transformation understandable. ",
+          checked: false
         }
       ]
     },
@@ -394,21 +429,25 @@ const INITIAL_STATE = {
         {
           label:"It is a way to reduce ‘dimensionality’ while at the same time preserving as much of the class discrimination information as possible.",
           valid:true,
-          explication:"Perfectly right. LDA is a supervised algorithm that takes into consideration the class label"
+          explication:"Perfectly right. LDA is a supervised algorithm that takes into consideration the class label",
+          checked: false
         },
         {
           label:"Performs better  when we have few samples per class",
           valid:false,
-          explication:"PCA is better in this case. Whereas LDA works better with large dataset having multiple classes"
+          explication:"PCA is better in this case. Whereas LDA works better with large dataset having multiple classes",
+          checked: false
         },
         {
           label:"It finds centroid for each class then projects data points on a line so that clusters are as separated as possible",
-          valid:true
+          valid:true,
+          checked: false
         },
 
         {
           label:"Unlike PCA. It makes assumptions about normally distributed classes and equal class covariances",
-          valid:true
+          valid:true,
+          checked: false
         }
       ]
     },
@@ -417,30 +456,36 @@ const INITIAL_STATE = {
       responses:[
         {
           label:"It's all about finding relationship between dependent variables and independent variables",
-          valid:true
+          valid:true,
+          checked: false
         },
         {
           label:"Applicable only if the solution is linear",
-          valid:true
+          valid:true,
+          checked: false
         },
         {
           label:"Independent variables may be continuous or discrete, while dependent variable is discrete",
           valid:false,
-          explication: "Independent variables may be continuous or discrete, while dependent variable is continuous"
+          explication: "Independent variables may be continuous or discrete, while dependent variable is continuous",
+          checked: false
         },
         {
           label:"Logistic regression is a classification algorithm where dependent variable is binary.",
-          valid:true
+          valid:true,
+          checked: false
         },
         {
           label:"In the Polynomial Regression, the best fit line is a straight line",
           valid:false,
-          explication:"Nope! it can be a curve line which can fit the model perfectly"
+          explication:"Nope! it can be a curve line which can fit the model perfectly",
+          checked: false
         },
         {
           label:"Stepwise regression fits the regression model by adding/dropping predictors on each step based on a specified criterion.",
           valid:true,
-          explication:"It aims to maximize the prediction power with minimum number of predictors."
+          explication:"It aims to maximize the prediction power with minimum number of predictors.",
+          checked: false
         }
       ]
     },
@@ -450,26 +495,31 @@ const INITIAL_STATE = {
         {
           label:"Mean Square Error (L2 loss)",
           valid:true,
-          explication:"It is a measure of how close a fitted line is to actual data points."
+          explication:"It is a measure of how close a fitted line is to actual data points.",
+          checked: false
         },
         {
           label:"Root Mean Square Error",
-          valid:false
+          valid:false,
+          checked: false
         },
         {
           label:"Mean Absolute Error(L1 loss)",
           valid:true,
-          explication:"It measures the magnitude of error without considering their direction. MAE is more robust to outliers since it does not make use of square."
+          explication:"It measures the magnitude of error without considering their direction. MAE is more robust to outliers since it does not make use of square.",
+          checked: false
         },
         {
           label:"Huber Loss",
           valid:true,
-          explication:"It is less sensitive to outliers in data. it is an Absolute error but when the Error is small then it becomes MSE"
+          explication:"It is less sensitive to outliers in data. it is an Absolute error but when the Error is small then it becomes MSE",
+          checked: false
         },
         {
           label:"Log-Cos h Loss",
           valid:true,
-          explication:"Log-cosh is the logarithm of the hyperbolic cosine function of the prediction error."
+          explication:"Log-cosh is the logarithm of the hyperbolic cosine function of the prediction error.",
+          checked: false
         }
       ]
     },
@@ -478,15 +528,18 @@ const INITIAL_STATE = {
       responses:[
         {
           label:"It takes real value as an input and gives probability which is in between 0 and 1",
-          valid:true
+          valid:true,
+          checked: false
         },
         {
           label:"It is linear in nature",
-          valid:false
+          valid:false,
+          checked: false
         },
         {
           label:"It convert high values to 0 and low values to 1",
-          valid:true
+          valid:true,
+          checked: false
         }
       ]
     },
@@ -495,16 +548,19 @@ const INITIAL_STATE = {
       responses:[
         {
           label:"Linear relationship between dependent and independent variables is required",
-          valid:false
+          valid:false,
+          checked: false
         },
         {
           label:"The independent variable should not be correlated with each other",
-          valid:true
+          valid:true,
+          checked: false
         },
         {
           label:"The data is modeled using a straight line",
           valid:false,
-          explication:"The probability of events is represented as a linear function of a combination of independent variables"
+          explication:"The probability of events is represented as a linear function of a combination of independent variables",
+          checked: false
         }
       ]
     },
@@ -513,26 +569,31 @@ const INITIAL_STATE = {
       responses:[
         {
           label:"assumes that similar things exist in close proximity",
-          valid:true
+          valid:true,
+          checked: false
         },
         {
           label:"For categorical variables it uses Euclidean, Manhattan or Minkowski distances",
           valid:false,
-          explication:" Those distances are used for numerical variables. However with categorical variables, the hamming distance must be used."
+          explication:" Those distances are used for numerical variables. However with categorical variables, the hamming distance must be used.",
+          checked: false
         },
         {
           label:"It is an eager learner",
           valid:false,
-          explication:"It is a lazy learner. Because it doesn’t learn a discriminative function from the training data but memorizes the training dataset instead."
+          explication:"It is a lazy learner. Because it doesn’t learn a discriminative function from the training data but memorizes the training dataset instead.",
+          checked: false
         },
         {
           label:"It does require a lot of training to find the nearest neighbor",
           valid:false,
-          explication:"There is no training time in KNN. Simply because it is lazy :p"
+          explication:"There is no training time in KNN. Simply because it is lazy :p",
+          checked: false
         },
         {
           label:"It doesn't work well when the number of inputs is very large neither with high dimensional data",
-          valid:true
+          valid:true,
+          checked: false
         }
       ]
     },
@@ -542,17 +603,20 @@ const INITIAL_STATE = {
         {
           label:"Assumes that all features are independent of each other",
           valid:true,
-          explication:" Well that's the secret behind naive adjective. ;)"
+          explication:" Well that's the secret behind naive adjective. ;)",
+          checked: false
         },
         {
           label:"It is a discriminative classifier",
           valid:false,
-          explication:"It is a generative classifier. It ?learns the joint probability distribution p (x, y). It predicts the conditional probability with the help of Bayes Theorem. A Discriminative model ?models the decision boundary between the classes. A Discriminative model ?learns the conditional probability distribution p (y |x)."
+          explication:"It is a generative classifier. It ?learns the joint probability distribution p (x, y). It predicts the conditional probability with the help of Bayes Theorem. A Discriminative model ?models the decision boundary between the classes. A Discriminative model ?learns the conditional probability distribution p (y |x).",
+          checked: false
         },
         {
           label:"Sometimes it become unable to make a prediction",
           valid:true,
-          explication:"when the test data contain a categorie which didn't exist in training data"
+          explication:"when the test data contain a categorie which didn't exist in training data",
+          checked: false
         }
       ]
     },
@@ -562,26 +626,31 @@ const INITIAL_STATE = {
         {
           label:"It uses many trees, and it makes a prediction by averaging the predictions of each component tree. ",
           valid:false,
-          explication:"This is random forest. They perform better than one decision tree"
+          explication:"This is random forest. They perform better than one decision tree",
+          checked: false
         },
         {
           label:"Calculate the probability of a given record and classify it by assigning it to the most likely class",
-          valid:true
+          valid:true,
+          checked: false
         },
         {
           label:"It is a parametric model",
           valid:false,
-          explication:"It is non parametric model"
+          explication:"It is non parametric model",
+          checked: false
         },
         {
           label:"A very good classifier with continuous data",
           valid:false,
-          explication:"It performs better with categorical data. But with continuous data it uses the variance to choose the best split with preference to lowest variance."
+          explication:"It performs better with categorical data. But with continuous data it uses the variance to choose the best split with preference to lowest variance.",
+          checked: false
         },
         {
           label:"Underfitting is when a decision tree fails to capture important distinctions and patterns in the data, so it performs poorly even in training data.",
           valid:true,
-          explication:"overfitting is where a model matches the training data almost perfectly, but does poorly in validation and other new data."
+          explication:"overfitting is where a model matches the training data almost perfectly, but does poorly in validation and other new data.",
+          checked: false
         }
       ]
     },
@@ -590,26 +659,31 @@ const INITIAL_STATE = {
       responses:[
         {
           label:"In one hot encoding there is no ordering in the categorical data.",
-          valid:true
+          valid:true,
+          checked: false
         },
         {
           label:"One hot encoding assigns each unique value to a different integer.",
           valid:false,
-          explication:"This is label encoding. While one hot encoding creates new columns indicating the presence (or absence) of each possible value in the original data."
+          explication:"This is label encoding. While one hot encoding creates new columns indicating the presence (or absence) of each possible value in the original data.",
+          checked: false
         },
         {
           label:"Label encoding replaces each categorical value with the number of times it appears in the dataset",
           valid:false,
-          explication:"It is Count encoding."
+          explication:"It is Count encoding.",
+          checked: false
         },
         {
           label:"Catboost encoding replaces a categorical value with the average value of the target for that value of the feature.",
           valid:false,
-          explication:"Wrong. This is called target encoding"
+          explication:"Wrong. This is called target encoding",
+          checked: false
         },
         {
           label:"Target encoding replaces a categorical value with the average value of the target for that value of the feature.",
-          valid:true
+          valid:true,
+          checked: false
         }
       ]
     }
