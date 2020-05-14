@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ai-quiz/static/css/main.25d87324.chunk.css",
-    "main.js": "/ai-quiz/static/js/main.b30ba17e.chunk.js",
-    "main.js.map": "/ai-quiz/static/js/main.b30ba17e.chunk.js.map",
+    "main.js": "/ai-quiz/static/js/main.5ab49d42.chunk.js",
+    "main.js.map": "/ai-quiz/static/js/main.5ab49d42.chunk.js.map",
     "runtime-main.js": "/ai-quiz/static/js/runtime-main.6ce6e251.js",
     "runtime-main.js.map": "/ai-quiz/static/js/runtime-main.6ce6e251.js.map",
     "static/js/2.6f2ca652.chunk.js": "/ai-quiz/static/js/2.6f2ca652.chunk.js",
     "static/js/2.6f2ca652.chunk.js.map": "/ai-quiz/static/js/2.6f2ca652.chunk.js.map",
     "index.html": "/ai-quiz/index.html",
-    "precache-manifest.69fc0e105f1301fb7c4e41f08b685f56.js": "/ai-quiz/precache-manifest.69fc0e105f1301fb7c4e41f08b685f56.js",
+    "precache-manifest.883b4797888ce472624ab2999100f3af.js": "/ai-quiz/precache-manifest.883b4797888ce472624ab2999100f3af.js",
     "service-worker.js": "/ai-quiz/service-worker.js",
     "static/css/main.25d87324.chunk.css.map": "/ai-quiz/static/css/main.25d87324.chunk.css.map",
     "static/js/2.6f2ca652.chunk.js.LICENSE.txt": "/ai-quiz/static/js/2.6f2ca652.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.6ce6e251.js",
     "static/js/2.6f2ca652.chunk.js",
     "static/css/main.25d87324.chunk.css",
-    "static/js/main.b30ba17e.chunk.js"
+    "static/js/main.5ab49d42.chunk.js"
   ]
 }
