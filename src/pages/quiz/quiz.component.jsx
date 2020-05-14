@@ -25,11 +25,12 @@ const Quiz = ({quizes, submitted, setSubmitted}) => {
     handleOpen();
     setSubmitted(true);
     let scoreFinal = quizes.reduce((score, quiz) => {
-      return score + quiz.responses.reduce((note, option) => {
-        return !(option.checked ^ option.valid) && note;
+      let rightQuiz = quiz.responses.reduce((note, option) => {
+        return (option.checked === option.valid) && note;
       }, true) ? 1 : 0;
-    }, 0)/ quizes.length;
-    setScore(scoreFinal);
+      return score + rightQuiz;
+    }, 0);
+    setScore(scoreFinal/quizes.length);
   }
 
   return (

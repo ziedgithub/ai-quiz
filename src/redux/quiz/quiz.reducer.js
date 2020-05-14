@@ -487,10 +487,6 @@ const INITIAL_STATE = {
         {
           label:"It convert high values to 0 and low values to 1",
           valid:true
-        },
-        {
-          label:"It takes real value as an input and gives probability which is in between 0 and 1",
-          valid:true
         }
       ]
     },
